@@ -20,6 +20,9 @@
             CityLbl.Text = myWeather.name;
             TemperatureLbl.Text = myWeather.main.temp.ToString("F0") + " \u00B0C";
             ConditionsLbl.Text = myWeather.weather[0].description.ToUpper();
+
+            string iconUrl = $"https://openweathermap.org/payload/api/media/file/{myWeather.weather[0].icon}.png";
+            WeatherImg.Source = ImageSource.FromUri(new Uri(iconUrl));
         }
     }
 }
